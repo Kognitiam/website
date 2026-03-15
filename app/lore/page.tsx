@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://kognitiam.sg/lore",
     images: [
       {
-        url: "/images/github-header.png",
+        url: "/images/og.png",
         width: 1200,
         height: 630,
         alt: "Kognitiam - Where Coffee Meets Cognition",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Our Story | Kognitiam",
     description: "The origin story of Kognitiam - how a late-night conversation, a viral essay, and a crumb of kaya toast gave birth to a Singapore AI community.",
-    images: ["/images/github-header.png"],
+    images: ["/images/og.png"],
   },
 }
 
@@ -80,7 +80,7 @@ export default function LorePage() {
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 flex justify-center">
               <Image
-                src="/images/github-header.png"
+                src="/images/og.png"
                 alt="Kognitiam community gathering"
                 width={800}
                 height={400}

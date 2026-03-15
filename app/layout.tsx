@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: '/images/logo.svg',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_SG',
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
     description: 'A Singapore-born AI community built around coffee, conversation, and collective learning. Part reading group, part salon, part kopitiam for minds.',
     images: [
       {
-        url: '/images/github-header.png',
+        url: '/images/og.png',
         width: 1200,
         height: 630,
         alt: 'Kognitiam - Where Coffee Meets Cognition',
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kognitiam - Where Coffee Meets Cognition',
     description: 'A Singapore-born AI community built around coffee, conversation, and collective learning.',
-    images: ['/images/github-header.png'],
+    images: ['/images/og.png'],
   },
   robots: {
     index: true,
