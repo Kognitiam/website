@@ -1,0 +1,145 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Kognitiam Brand Colors */
+:root {
+  /* Cream White - Background */
+  --background: #FDF6E3;
+  --foreground: #421F07;
+  
+  /* Card styling with cream */
+  --card: #FFFBF0;
+  --card-foreground: #421F07;
+  
+  --popover: #FFFBF0;
+  --popover-foreground: #421F07;
+  
+  /* Kopitiam Brown - Primary */
+  --primary: #6B4423;
+  --primary-foreground: #FDF6E3;
+  
+  /* Corgi Tan - Secondary */
+  --secondary: #F5C542;
+  --secondary-foreground: #421F07;
+  
+  /* Muted tones */
+  --muted: #E8DCC8;
+  --muted-foreground: #6B4423;
+  
+  /* Kopitiam Green - Accent */
+  --accent: #3D7A4A;
+  --accent-foreground: #FDF6E3;
+  
+  --destructive: #B54A32;
+  --destructive-foreground: #FDF6E3;
+  
+  --border: #D4C4A8;
+  --input: #E8DCC8;
+  --ring: #6B4423;
+  
+  /* Chart colors using brand palette */
+  --chart-1: #6B4423;
+  --chart-2: #3D7A4A;
+  --chart-3: #F5C542;
+  --chart-4: #5C8542;
+  --chart-5: #EB9C40;
+  
+  --radius: 0.75rem;
+  
+  --sidebar: #FFFBF0;
+  --sidebar-foreground: #421F07;
+  --sidebar-primary: #6B4423;
+  --sidebar-primary-foreground: #FDF6E3;
+  --sidebar-accent: #3D7A4A;
+  --sidebar-accent-foreground: #FDF6E3;
+  --sidebar-border: #D4C4A8;
+  --sidebar-ring: #6B4423;
+}
+
+.dark {
+  --background: #1A120B;
+  --foreground: #FDF6E3;
+  --card: #2A1F15;
+  --card-foreground: #FDF6E3;
+  --popover: #2A1F15;
+  --popover-foreground: #FDF6E3;
+  --primary: #F5C542;
+  --primary-foreground: #421F07;
+  --secondary: #6B4423;
+  --secondary-foreground: #FDF6E3;
+  --muted: #3D2D1F;
+  --muted-foreground: #D4C4A8;
+  --accent: #5C8542;
+  --accent-foreground: #FDF6E3;
+  --destructive: #B54A32;
+  --destructive-foreground: #FDF6E3;
+  --border: #4A3828;
+  --input: #3D2D1F;
+  --ring: #F5C542;
+  --chart-1: #F5C542;
+  --chart-2: #5C8542;
+  --chart-3: #EB9C40;
+  --chart-4: #3D7A4A;
+  --chart-5: #6B4423;
+  --sidebar: #2A1F15;
+  --sidebar-foreground: #FDF6E3;
+  --sidebar-primary: #F5C542;
+  --sidebar-primary-foreground: #421F07;
+  --sidebar-accent: #5C8542;
+  --sidebar-accent-foreground: #FDF6E3;
+  --sidebar-border: #4A3828;
+  --sidebar-ring: #F5C542;
+}
+
+@theme inline {
+  --font-sans: var(--font-open-sans), 'Open Sans', system-ui, sans-serif;
+  --font-heading: var(--font-nunito), 'Nunito', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
