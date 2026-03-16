@@ -49,7 +49,7 @@ export function JoinSection() {
             >
               <Link href="https://docs.google.com/forms/d/e/1FAIpQLScXJ6lHpR8FfeWrKSGtno_gLkabA6XNCzh26mfkgnDP3Th2Jw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
                 <ClipboardList className="mr-2 h-5 w-5" />
-                Express Interest
+                Request Invite
               </Link>
             </Button>
           </div>
