@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, MessageCircle, Mail } from "lucide-react"
+import { Github, MessageCircle, Mail, ClipboardList } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function JoinSection() {
@@ -22,9 +22,9 @@ export function JoinSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Button 
-              asChild 
-              size="lg" 
+            <Button
+              asChild
+              size="lg"
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
             >
               <Link href="https://github.com/kognitiam" target="_blank" rel="noopener noreferrer">
@@ -32,14 +32,24 @@ export function JoinSection() {
                 Join on GitHub
               </Link>
             </Button>
-            <Button 
-              asChild 
-              size="lg" 
+            <Button
+              asChild
+              size="lg"
               className="bg-transparent border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
               <Link href="https://t.me/kognitiam" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 Join Telegram
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-transparent border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+            >
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScXJ6lHpR8FfeWrKSGtno_gLkabA6XNCzh26mfkgnDP3Th2Jw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+                <ClipboardList className="mr-2 h-5 w-5" />
+                Express Interest
               </Link>
             </Button>
           </div>
