@@ -7,6 +7,7 @@ import { format, isPast, isToday } from "date-fns";
 import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink } from "lucide-react";
 import { getEvent, KognEvent } from "@/lib/events";
 import { getBlog, EventBlog, ContentBlock } from "@/lib/blog";
+import ReactMarkdown from "react-markdown";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -16,18 +17,39 @@ import { Badge } from "@/components/ui/badge";
 
 function TextBlock({ content }: { content: string }) {
   return (
-    <div className="space-y-4">
-      {content.split(/\n\n+/).map((para, i) => (
-        <p key={i} className="text-foreground leading-relaxed text-[1.05rem]">
-          {para.split("\n").map((line, j) => (
-            <span key={j}>
-              {j > 0 && <br />}
-              {line}
-            </span>
-          ))}
-        </p>
-      ))}
-    </div>
+    <ReactMarkdown
+      components={{
+        p: ({ children }) => (
+          <p className="text-foreground leading-relaxed text-[1.05rem] mb-4">{children}</p>
+        ),
+        h1: ({ children }) => (
+          <h1 className="text-3xl font-bold text-foreground mt-6 mb-3">{children}</h1>
+        ),
+        h2: ({ children }) => (
+          <h2 className="text-2xl font-semibold text-foreground mt-5 mb-2">{children}</h2>
+        ),
+        h3: ({ children }) => (
+          <h3 className="text-xl font-semibold text-foreground mt-4 mb-2">{children}</h3>
+        ),
+        strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+        em: ({ children }) => <em className="italic">{children}</em>,
+        ul: ({ children }) => <ul className="list-disc list-inside space-y-1 mb-4 text-foreground text-[1.05rem]">{children}</ul>,
+        ol: ({ children }) => <ol className="list-decimal list-inside space-y-1 mb-4 text-foreground text-[1.05rem]">{children}</ol>,
+        li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+        a: ({ href, children }) => (
+          <a href={href} className="underline text-foreground hover:opacity-70" target="_blank" rel="noopener noreferrer">{children}</a>
+        ),
+        blockquote: ({ children }) => (
+          <blockquote className="border-l-4 border-muted-foreground pl-4 italic text-muted-foreground my-4">{children}</blockquote>
+        ),
+        code: ({ children }) => (
+          <code className="bg-muted rounded px-1 py-0.5 text-sm font-mono">{children}</code>
+        ),
+        hr: () => <hr className="my-6 border-muted" />,
+      }}
+    >
+      {content}
+    </ReactMarkdown>
   );
 }
 
