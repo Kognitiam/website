@@ -27,6 +27,7 @@ export function Footer() {
           {/* Links */}
           <nav className="flex items-center gap-6 text-sm text-muted-foreground">
             <Link href="#about" className="hover:text-primary transition-colors">About</Link>
+            <Link href="/events" className="hover:text-primary transition-colors">Events</Link>
             <Link href="#features" className="hover:text-primary transition-colors">What We Do</Link>
             <Link href="#community" className="hover:text-primary transition-colors">Community</Link>
             <Link href="#join" className="hover:text-primary transition-colors">Join Us</Link>
