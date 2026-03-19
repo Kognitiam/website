@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 const features = [
   {
     icon: BookOpen,
-    title: "Read Papers",
-    description: "Dive deep into cutting-edge AI research papers together. We break down complex concepts into digestible discussions.",
+    title: "Discuss AI",
+    description: "Explore AI research, emerging trends, real-world use cases, and big ideas together through open, accessible discussions.",
   },
   {
     icon: MessageCircle,
@@ -85,9 +85,9 @@ export function FeaturesSection() {
               Regular Sessions & Events
             </h3>
             <p className="text-muted-foreground leading-relaxed max-w-xl">
-              From paper reading sessions to guest speaker events, Kognitiam hosts regular gatherings 
-              that cater to different learning styles. Whether you prefer deep technical dives or 
-              high-level discussions, there is something for everyone.
+              Kognitiam hosts inclusive AI discussions for people from all backgrounds, including those without technical experience.
+              Our sessions are designed to make AI concepts approachable, engaging, and meaningful through open conversation and shared
+              learning.
             </p>
           </div>
         </div>
