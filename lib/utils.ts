@@ -6,6 +6,26 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
+ * Strips markdown syntax and returns plain text suitable for compact previews.
+ */
+export function stripMarkdown(text: string): string {
+  return text
+    .replace(/#{1,6}\s+/g, "")           // headings
+    .replace(/\*\*(.+?)\*\*/g, "$1")     // bold
+    .replace(/\*(.+?)\*/g, "$1")         // italic *
+    .replace(/_(.+?)_/g, "$1")           // italic _
+    .replace(/~~(.+?)~~/g, "$1")         // strikethrough
+    .replace(/`(.+?)`/g, "$1")           // inline code
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1") // links
+    .replace(/^>\s+/gm, "")             // blockquotes
+    .replace(/^[-*+]\s+/gm, "")         // unordered list markers
+    .replace(/^\d+\.\s+/gm, "")         // ordered list markers
+    .replace(/^-{3,}$/gm, "")           // horizontal rules
+    .replace(/\n+/g, " ")               // collapse newlines to spaces
+    .trim();
+}
+
+/**
  * Transforms Google Drive sharing URLs into proxy URLs to bypass CORS restrictions.
  * Handles formats like:
  *   https://drive.google.com/file/d/FILE_ID/view?...

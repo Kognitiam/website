@@ -21,7 +21,7 @@ import {
   deleteEvent,
   KognEvent,
 } from "@/lib/events";
-import { resolveImageUrl } from "@/lib/utils";
+import { resolveImageUrl, stripMarkdown } from "@/lib/utils";
 import { useAuth } from "@/contexts/auth-context";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -437,7 +437,7 @@ export default function AdminEventsPage() {
                       </div>
                       {ev.description && (
                         <p className="text-xs text-muted-foreground mt-1 line-clamp-1">
-                          {ev.description}
+                          {stripMarkdown(ev.description)}
                         </p>
                       )}
                     </div>

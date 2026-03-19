@@ -236,9 +236,9 @@ export default function EventDetailPage() {
 
         {/* Description */}
         {event.description && (
-          <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-            {event.description}
-          </p>
+          <div className="mb-8">
+            <TextBlock content={event.description} />
+          </div>
         )}
 
         {/* Register CTA (upcoming only) */}
