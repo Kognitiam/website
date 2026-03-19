@@ -21,6 +21,7 @@ import {
   deleteEvent,
   KognEvent,
 } from "@/lib/events";
+import { resolveImageUrl } from "@/lib/utils";
 import { useAuth } from "@/contexts/auth-context";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -383,7 +384,7 @@ export default function AdminEventsPage() {
                     {ev.imageUrl ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img
-                        src={ev.imageUrl}
+                        src={resolveImageUrl(ev.imageUrl)}
                         alt={ev.title}
                         className="w-20 h-14 object-cover rounded-lg shrink-0"
                       />

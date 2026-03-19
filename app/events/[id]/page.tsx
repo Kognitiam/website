@@ -7,6 +7,7 @@ import { format, isPast, isToday } from "date-fns";
 import { ArrowLeft, Calendar, Clock, MapPin, ExternalLink } from "lucide-react";
 import { getEvent, KognEvent } from "@/lib/events";
 import { getBlog, EventBlog, ContentBlock } from "@/lib/blog";
+import { resolveImageUrl } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -58,7 +59,7 @@ function ImageBlock({ url, caption }: { url: string; caption?: string }) {
     <figure className="space-y-2 my-2">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={url}
+        src={resolveImageUrl(url)}
         alt={caption ?? ""}
         className="w-full rounded-2xl object-cover"
       />
@@ -158,7 +159,7 @@ export default function EventDetailPage() {
         <div className="relative w-full h-[45vh] md:h-[58vh] overflow-hidden bg-muted">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={event.imageUrl}
+            src={resolveImageUrl(event.imageUrl)}
             alt={event.title}
             className="w-full h-full object-cover"
           />
