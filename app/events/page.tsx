@@ -6,6 +6,7 @@ import { MapPin, ExternalLink, Calendar, Clock, BookOpen } from "lucide-react";
 import { Timestamp } from "firebase/firestore";
 import { format, isPast, isToday } from "date-fns";
 import { getEvents, KognEvent } from "@/lib/events";
+import { resolveImageUrl } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +29,7 @@ function EventCard({ event }: { event: KognEvent }) {
           {event.imageUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={event.imageUrl}
+              src={resolveImageUrl(event.imageUrl)}
               alt={event.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
