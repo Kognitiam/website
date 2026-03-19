@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, MessageCircle, Mail, ClipboardList } from "lucide-react"
+import { Github, Mail, ClipboardList, Twitter, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function JoinSection() {
@@ -20,39 +20,38 @@ export function JoinSection() {
             conversation that shapes the future.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Button
-              asChild
-              size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
-            >
-              <Link href="https://github.com/kognitiam" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
-                Join on GitHub
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="bg-transparent border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-            >
-              <Link href="https://t.me/kognitiam" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
-                Join Telegram
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="bg-transparent border-2 border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-            >
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScXJ6lHpR8FfeWrKSGtno_gLkabA6XNCzh26mfkgnDP3Th2Jw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
-                <ClipboardList className="mr-2 h-5 w-5" />
-                Request Invite
-              </Link>
-            </Button>
+          {/* Social Icons */}
+          <div className="flex items-center gap-6">
+            <Link href="https://github.com/kognitiam" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="GitHub">
+              <Github className="h-6 w-6" />
+            </Link>
+            <Link href="https://t.me/kognitiam" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="Telegram">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </Link>
+            <Link href="https://x.com/Kognitiam" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="X (Twitter)">
+              <Twitter className="h-6 w-6" />
+            </Link>
+            <Link href="https://www.linkedin.com/company/kognitiam" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="LinkedIn">
+              <Linkedin className="h-6 w-6" />
+            </Link>
+            <Link href="https://www.instagram.com/kognitiam/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors" aria-label="Instagram">
+              <Instagram className="h-6 w-6" />
+            </Link>
           </div>
+
+          {/* Request Invite */}
+          <Button
+            asChild
+            size="lg"
+            className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+          >
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLScXJ6lHpR8FfeWrKSGtno_gLkabA6XNCzh26mfkgnDP3Th2Jw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">
+              <ClipboardList className="mr-2 h-5 w-5" />
+              Join the community!
+            </Link>
+          </Button>
 
           {/* Contact */}
           <div className="flex items-center gap-2 pt-4">
