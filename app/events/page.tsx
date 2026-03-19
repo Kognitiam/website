@@ -6,7 +6,7 @@ import { MapPin, ExternalLink, Calendar, Clock, BookOpen } from "lucide-react";
 import { Timestamp } from "firebase/firestore";
 import { format, isPast, isToday } from "date-fns";
 import { getEvents, KognEvent } from "@/lib/events";
-import { resolveImageUrl } from "@/lib/utils";
+import { resolveImageUrl, stripMarkdown } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
@@ -93,7 +93,7 @@ function EventCard({ event }: { event: KognEvent }) {
 
         {/* Description */}
         <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">
-          {event.description}
+          {stripMarkdown(event.description)}
         </p>
 
         {/* CTA */}
